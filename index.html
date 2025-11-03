@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1.0"/>
+  <title>Optimasi Material</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <div class="container">
+    <h2>Optimasi Material</h2>
+    <form id="materialForm" autocomplete="off">
+      <label>
+        Jenis Material:
+        <select id="materialType">
+          <option value="circle">Lingkaran</option>
+          <option value="square">Persegi</option>
+          <option value="rectangle">Persegi Panjang</option>
+        </select>
+      </label>
+      <div id="circleFields" class="dynamic-fields">
+        <label>ID (Inner Diameter): <input type="number" id="idInput"></label>
+        <label>OD (Outer Diameter): <input type="number" id="odInput"></label>
+        <label>Tebal: <input type="number" id="thicknessCircleInput"></label>
+      </div>
+      <div id="squareFields" class="dynamic-fields" style="display:none">
+        <label>Panjang: <input type="number" id="lengthSqInput"></label>
+        <label>Lebar: <input type="number" id="widthSqInput"></label>
+        <label>Tinggi: <input type="number" id="heightSqInput"></label>
+      </div>
+      <div id="rectangleFields" class="dynamic-fields" style="display:none">
+        <label>Panjang: <input type="number" id="lengthRectInput"></label>
+        <label>Lebar: <input type="number" id="widthRectInput"></label>
+        <label>Tinggi: <input type="number" id="heightRectInput"></label>
+      </div>
+      <label>
+        Spiling / Jarak antar bagian (mm):
+        <input type="number" id="spilingInput">
+      </label>
+      <button type="submit">Optimasi & Tampilkan 3D</button>
+    </form>
+    <div id="preview3d" class="preview-container" style="min-width: 350px; min-height: 320px;"></div>
+  </div>
+  <!-- Three.js harus dimuat sebelum app.js -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r150/three.min.js"></script>
+  <script src="app.js"></script>
+</body>
+</html>
